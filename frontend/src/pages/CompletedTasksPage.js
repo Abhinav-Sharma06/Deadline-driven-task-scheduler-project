@@ -31,7 +31,7 @@ const CompletedTasksPage = () => {
   return (
     <>
       <section className="container px-4 mx-auto py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between">
           <div>
             <h2 className="text-4xl font-medium text-gray-800 dark:text-yellow-500 mt-2">
               Completed Tasks
@@ -39,7 +39,7 @@ const CompletedTasksPage = () => {
             
           </div>
 
-          <div className="flex gap-3 mt-4">
+          <div className="flex flex-wrap gap-3 mt-4">
 
           <Link to={"/"}>
             <div>
@@ -73,7 +73,7 @@ const CompletedTasksPage = () => {
        
        <div className="mt-12">
         <div className="w-[95%] bg-indigo-600 mx-auto px-4 py-2 rounded-md shadow-sm shadow-gray-300">
-          <div className="flex items-center justify-between w-7/12 text-white text-xl font-semibold ">
+          <div className="flex flex-wrap items-center justify-between w-7/12 text-white text-xl font-semibold ">
             <h3>Task name and description</h3>
             <h3>Deadline date</h3>
           </div>
@@ -81,19 +81,19 @@ const CompletedTasksPage = () => {
 
         <div >
           {
-            completedTasks.length === 0 ? <div className="text-gray-400 shadow-sm shadow-lime-200 rounded-md w-[95%] mx-auto flex justify-center items-center h-[380px] text-3xl font-semibold">No completed tasks yet.</div> :
+            completedTasks.length === 0 ? <div className="text-gray-400 shadow-sm shadow-lime-200 rounded-md w-[95%] mx-auto flex flex-wrap justify-center items-center h-[380px] text-3xl font-semibold">No completed tasks yet.</div> :
             completedTasks?.map((task) => (
               
-              <div className="w-[95%] my-2 mx-auto px-4 py-2 rounded-md shadow-sm shadow-lime-200  text-white flex items-center justify-between" >
+              <div className="w-[95%] my-2 mx-auto px-4 py-2 rounded-md shadow-sm shadow-lime-200  text-white flex flex-wrap items-center justify-between" >
               <div className="flex items-center justify-between w-[56.8%] text-white text-lg">
-                <div>
+                <div className="max-w-[70%]">
                   <h4 className="text-purple-400 font-semibold text-xl">{task.name}</h4>
                   <p >{task.description}</p>
                 </div>
                 <div>{
                   task.deadline.replace("T00:00:00.000Z","")}</div>
               </div>
-              <div className="flex items-center justify-center gap-10 pr-6 text-lg font-medium">
+              <div className="flex flex-wrap items-center justify-center gap-10 pr-6 text-lg font-medium">
                 <button className="bg-green-500 px-6 py-1 rounded-md ">Completed task</button>
                
               </div>

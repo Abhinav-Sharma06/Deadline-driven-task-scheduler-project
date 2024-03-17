@@ -26,7 +26,7 @@ const AddTaskPage = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="flex flex-wrap items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
             <h2 className="text-[18rem] font-bold leading-relaxed text-black dark:text-yellow-500 sm:text-4xl">
               Add your task
@@ -34,7 +34,7 @@ const AddTaskPage = () => {
             <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
               <Link
                 to={"/"}
-                className="font-medium text-indigo-500 transition-all duration-200 hover:text-indigo-700 hover:underline focus:text-indigo-700 flex items-center gap-3 text-lg"
+                className="font-medium text-indigo-500 transition-all duration-200 hover:text-indigo-700 hover:underline focus:text-indigo-700 flex flex-wrap items-center gap-3 text-lg"
               >
                 <FaBackward />
                 Back to all tasks page

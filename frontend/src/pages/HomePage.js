@@ -81,7 +81,7 @@ const HomePage = () => {
   return (
     <>
       <section className="container px-4 mx-auto py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between">
           <div>
             <h2 className="text-4xl font-medium text-gray-800 dark:text-yellow-500 mt-4">
               Deadline Driven Task Scheduler
@@ -91,7 +91,7 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="flex gap-3 mt-1">
+          <div className="flex flex-wrap gap-3 mt-1">
           <Link to={"/addTask"}>
             <div>
               <button className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-lg font-medium leading-7 text-white hover:bg-indigo-500 ">
@@ -112,7 +112,7 @@ const HomePage = () => {
        
        <div className="mt-12">
         <div className="w-[95%] bg-indigo-600 mx-auto px-4 py-2 rounded-md shadow-sm shadow-gray-300">
-          <div className="flex items-center justify-between w-7/12 text-white text-xl font-semibold ">
+          <div className="flex flex-wrap items-center justify-between w-7/12 text-white text-xl font-semibold ">
             <h3>Task name and description</h3>
             <h3>Deadline date</h3>
           </div>
@@ -120,19 +120,19 @@ const HomePage = () => {
 
         <div >
           {
-            tasks.length === 0 ? <div className="text-gray-400 shadow-sm shadow-lime-200 rounded-md w-[95%] mx-auto flex justify-center items-center h-[380px] text-3xl font-semibold">Great work! Your task list is now empty.</div> :
+            tasks.length === 0 ? <div className="text-gray-400 shadow-sm shadow-lime-200 rounded-md w-[95%] mx-auto flex flex-wrap justify-center items-center h-[380px] text-3xl font-semibold">Great work! Your task list is now empty.</div> :
             tasks?.map((task) => (
               
-              <div className="w-[95%] my-2 mx-auto px-4 py-2 rounded-md shadow-sm shadow-lime-200  text-white flex items-center justify-between" >
-              <div className="flex items-center justify-between w-[56.8%] text-white text-lg">
-                <div>
+              <div className="w-[95%] my-4 mx-auto px-4 py-2 rounded-md shadow-sm shadow-lime-200  text-white flex flex-wrap items-center justify-between" >
+              <div className="flex  flex-wrap items-center justify-between w-[56.8%] text-white text-lg">
+                <div className="max-w-[70%]">
                   <h4 className="text-purple-400 font-semibold text-xl">{task.name}</h4>
                   <p >{task.description}</p>
                 </div>
                 <div className={(new Date(task.deadline.replace("T00:00:00.000Z",""))- new Date())/(1000 * 3600 * 24) < 3 ? ("text-red-500") : ("text-white")}>{
                   task.deadline.replace("T00:00:00.000Z","")}</div>
               </div>
-              <div className="flex items-center justify-center gap-10 pr-6 text-lg">
+              <div className="flex flex-wrap items-center justify-center gap-10 pr-6 text-lg">
                 <button onClick={() => handleRemoveTask(task._id)} className="bg-red-600 px-4 py-1 rounded-md  hover:bg-red-400">Remove task</button>
                 <button onClick={() => handleMarkAsDone(task._id)} className="bg-indigo-600 px-4 py-1 rounded-md  hover:bg-indigo-400">Mark as done</button>
               </div>
