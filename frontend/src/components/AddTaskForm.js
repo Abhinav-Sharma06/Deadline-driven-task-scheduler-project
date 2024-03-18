@@ -11,6 +11,12 @@ const AddTaskForm = () => {
 
   const addTask = async (data) => {
 
+    if (new Date(data.deadline) < new Date()) {
+      alert('Deadline must be in the future');
+      return;
+    }
+
+
     const savedUserResponse = await fetch(
       `${process.env.REACT_APP_BASE_URL}/addTasks`,
       {
